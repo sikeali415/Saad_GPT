@@ -25,7 +25,7 @@ export default function App() {
   const [chatMessages, setChatMessages] = useState<Message[]>([]);
   const [learnMessages, setLearnMessages] = useState<Message[]>([]);
   const [imageMessages, setImageMessages] = useState<Message[]>([]);
-  const [selectedModel, setSelectedModel] = useState("gemini-2.5-flash-preview-09-2025");
+  const [selectedModel, setSelectedModel] = useState("gemini-1.5-flash");
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isAppLoading, setIsAppLoading] = useState(true);
@@ -344,8 +344,7 @@ export default function App() {
                 <h2 className="text-2xl font-bold mb-4">About Saad GPT</h2>
                 <p className="text-[#4c5563] leading-relaxed">
                   Saad GPT is a personalized AI assistant built exclusively for Maliksaad. 
-                  Supporting multiple Gemini models including 2.5 Flash and Pro Preview, it is designed to be a versatile companion for learning, 
-                  creative image generation, and intelligent conversation.
+                  Supporting a wide range of Gemini models including Flash and Pro, optimized for maximum compatibility with all API keys.
                 </p>
               </NeumorphicCard>
 
@@ -503,8 +502,10 @@ export default function App() {
                     onChange={(e) => setSelectedModel(e.target.value)}
                     className="text-[10px] bg-transparent border-none text-[#4c5563] font-bold focus:ring-0 cursor-pointer outline-none"
                   >
-                    <option value="gemini-2.5-flash-preview-09-2025">Gemini 2.5 Flash</option>
-                    <option value="gemini-2.5-pro-preview-09-2025">Gemini 2.5 Pro</option>
+                    <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+                    <option value="gemini-1.5-flash-8b">Gemini 1.5 Flash-8B</option>
+                    <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+                    <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
                   </select>
                   <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
                 </div>
