@@ -2,7 +2,7 @@ import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
-export const chatWithAI = async (message: string, history: { role: string; content: string }[], userName: string = "Maliksaad", mode: string = "chat", modelName: string = "gemini-1.5-flash") => {
+export const chatWithAI = async (message: string, history: { role: string; content: string }[], userName: string = "Maliksaad", mode: string = "chat", modelName: string = "gemini-2.5-flash-preview-12-2025") => {
   let systemInstruction = `You are an advanced AI Assistant created by SigNify for ${userName}.
   Your owner is ${userName}, who lives in Sindh, Kashmore.
   You must always address them as "Sir" or "Owner".
@@ -38,7 +38,7 @@ export const chatWithAI = async (message: string, history: { role: string; conte
   }
 };
 
-export const debateWithAI = async (message: string, history: { role: string; content: string }[], userName: string = "Maliksaad", modelName: string = "gemini-1.5-flash") => {
+export const debateWithAI = async (message: string, history: { role: string; content: string }[], userName: string = "Maliksaad", modelName: string = "gemini-2.5-flash-preview-12-2025") => {
   const systemInstruction = `You are Saad GPT in "Debate & Deep Dive" mode, inspired by NotebookLM.
   Your owner is ${userName}. You must always address them as "Sir" or "Owner".
   In this mode, you don't just answer questions; you challenge ideas, provide counter-arguments, and perform deep analytical dives into topics.
