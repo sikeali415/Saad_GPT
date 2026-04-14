@@ -343,7 +343,7 @@ export default function App() {
                 <h2 className="text-2xl font-bold mb-4">About Saad GPT</h2>
                 <p className="text-[#4c5563] leading-relaxed">
                   Saad GPT is a personalized AI assistant built exclusively for Maliksaad. 
-                  Powered by Gemini 3.1 Pro, it is designed to be a versatile companion for learning, 
+                  Powered by Gemini Flash, it is designed to be a versatile companion for learning, 
                   creative image generation, and intelligent conversation.
                 </p>
               </NeumorphicCard>
@@ -497,7 +497,7 @@ export default function App() {
                   </>
                 )}
                 <div className="flex items-center space-x-2">
-                  <span className="text-xs text-[#8c98a9] hidden sm:inline">Gemini 3.1 Pro</span>
+                  <span className="text-xs text-[#8c98a9] hidden sm:inline">Gemini Flash</span>
                   <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
                 </div>
               </div>

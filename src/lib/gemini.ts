@@ -20,7 +20,7 @@ export const chatWithAI = async (message: string, history: { role: string; conte
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3.1-pro-preview",
+      model: "gemini-flash-latest",
       contents: [
         ...history.map(h => ({ role: h.role === "user" ? "user" : "model", parts: [{ text: h.content }] })),
         { role: "user", parts: [{ text: message }] }
@@ -33,7 +33,8 @@ export const chatWithAI = async (message: string, history: { role: string; conte
     return response.text;
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "I'm sorry, Sir. I encountered an error. Please try again.";
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return `I'm sorry, Sir. I encountered an error: ${errorMessage}. Please check your API key in the Secrets panel.`;
   }
 };
 
@@ -46,7 +47,7 @@ export const debateWithAI = async (message: string, history: { role: string; con
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3.1-pro-preview",
+      model: "gemini-flash-latest",
       contents: [
         ...history.map(h => ({ role: h.role === "user" ? "user" : "model", parts: [{ text: h.content }] })),
         { role: "user", parts: [{ text: message }] }
@@ -59,7 +60,8 @@ export const debateWithAI = async (message: string, history: { role: string; con
     return response.text;
   } catch (error) {
     console.error("Debate Error:", error);
-    return "I'm sorry, Sir. The debate encountered a technical issue. Let's try again.";
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return `I'm sorry, Sir. The debate encountered a technical issue: ${errorMessage}. Let's try again.`;
   }
 };
 
